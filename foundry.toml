@@ -1,19 +1,16 @@
 [profile.default]
 hardfork = "tempo:T13"
-src = "src"
-out = "out"
-libs = ["lib"]
 via_ir = true
 optimizer = true
-remappings = [
-    "tempo-std/=lib/tempo-std/src/",
-    "forge-std/=lib/forge-std/src/",
-    "solady/=lib/solady/src/",
-]
 invariant = { runs = 10, depth = 50, fail_on_revert = true }
-
-[lint]
-lint_on_build = false
 
 [profile.fuzz500]
 invariant = { runs = 500, depth = 500, fail_on_revert = true }
+
+[fmt]
+sort_imports = true
+wrap_comments = true
+ignore = ["reference/**", "test/spec/**"]
+
+[lint]
+lint_on_build = false

@@ -5,6 +5,7 @@ Solidity, for reading.
 
 - [`src/StablecoinDEX.sol`](src/StablecoinDEX.sol) is the port. It matches the precompile at the
   latest hardfork, from [`tempoxyz/tempo@80fe55e`](https://github.com/tempoxyz/tempo/tree/80fe55edf20f013efeac6f9d8b5e71d75cfab5a8/crates/precompiles/src/stablecoin_dex).
+  It follows the [Coinbase Solidity Style Guide](https://github.com/coinbase/solidity-style-guide).
 - [`reference/StablecoinDEX.2026-04.sol`](reference/StablecoinDEX.2026-04.sol) is Tempo's own
   Solidity reference, deleted upstream in [#3699](https://github.com/tempoxyz/tempo/pull/3699).
   It's stale; the port started from it.
@@ -24,7 +25,7 @@ git clone --recursive https://github.com/stevieraykatz/tempo-dex-sol && cd tempo
 1. Fetches `tempoxyz/tempo@80fe55e` and diffs its `tips/verify/test` against `test/spec`. The only
    change here is that `setUp` is marked `virtual`.
 2. Runs the suite on the Rust precompile.
-3. Runs the same suite on the port. [`test/PortSpec.t.sol`](test/PortSpec.t.sol) points the
+3. Runs the same suite on the port. [`test/StablecoinDEX.t.sol`](test/StablecoinDEX.t.sol) points the
    suite's `exchange` at a deployed port instead of the precompile.
 
 It needs Foundry 1.8.5+, which runs Tempo hardforks natively. CI runs the script on every push.
